@@ -1,7 +1,12 @@
 def call(int buildNumber) {
-  if (buildNumber % 2 == 0) {
-    pipeline {
+pipeline {
       agent any
+	  tools { 
+        maven 'Maven 3.6.2' 
+        jdk 'jdk8' 
+    }
+  if (buildNumber % 2 == 0) {
+    
       stages {
         stage('Even Stage') {
           steps {
@@ -9,10 +14,9 @@ def call(int buildNumber) {
           }
         }
       }
-    }
+    
   } else {
-    pipeline {
-      agent any
+    
       stages {
         stage('Odd Stage') {
           steps {
