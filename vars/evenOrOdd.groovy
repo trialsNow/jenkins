@@ -5,25 +5,24 @@ pipeline {
         maven 'Maven 3.6.2' 
         jdk 'jdk8' 
     }
-  if (buildNumber % 2 == 0) {
+  
     
       stages {
+	  if (buildNumber % 2 == 0) {
         stage('Even Stage') {
           steps {
             echo "The build number is even"
           }
         }
       }
-    
-  } else {
-    
-      stages {
-        stage('Odd Stage') {
+	  else {
+	  stage('Odd Stage') {
           steps {
             echo "The build number is odd"
           }
         }
-      }
-    }
-  }
+	  }
+	  }
+    
+  } 
 }
