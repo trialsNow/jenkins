@@ -1,4 +1,4 @@
-def lib = new utilities.Libraries()
+def lib = new utilities.Library.Libraries()
 
 def mavenOpts=[
     "release": "",
