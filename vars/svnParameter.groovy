@@ -15,21 +15,18 @@ pipeline {
         maven 'Maven 3.6.2'
         jdk 'jdk8'
     }
-    environment {
-        JOB_SVN_URL= ${svnURL}
-        
-    }
+   
     stages {
         stage("Select Build/Deployment Type") {
             steps {
                 script {
-                    lib.getMavenInput(mavenOpts,env.JOB_SVN_URL)
+                    lib.getMavenInput(mavenOpts,svnURL)
                 }
             }
         }
         stage("Check out from SVN") {
             steps {
-                svn "$env.JOB_SVN_URL"
+                svn svnURL
             }
         }
         stage('Maven Build/Deploy') {
