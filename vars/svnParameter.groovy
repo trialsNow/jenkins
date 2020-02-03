@@ -1,5 +1,3 @@
-@Library("CICD-Jenkins-Libraries@master")
-
 def lib = new utilities.Libraries()
 
 def mavenOpts=[
