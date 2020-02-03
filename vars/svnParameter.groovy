@@ -4,17 +4,19 @@ def mavenOpts=[
     "release": "",
     "build": "clean install -Dpre-site-goals=clean,deploy ",
     "deploy": "" ]
+	
+
   
 def call(String svnURL) {
   
 pipeline {
     agent { label 'linux'}
     tools {
-        maven 'Maven 3.0.5'
-        jdk 'JDK 1.7.0_51'
+        maven 'Maven 3.6.2'
+        jdk 'jdk8'
     }
     environment {
-        JOB_SVN_URL=svnURL
+        JOB_SVN_URL= ${svnURL}
         
     }
     stages {
