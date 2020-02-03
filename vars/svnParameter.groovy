@@ -1,14 +1,12 @@
-def lib = new utilities.Libraries()
+
+def call(String svnURL) {
+  def lib = new utilities.Libraries()
 
 def mavenOpts=[
     "release": "",
     "build": "clean install -Dpre-site-goals=clean,deploy ",
     "deploy": "" ]
 	
-
-  
-def call(String svnURL) {
-  
 pipeline {
     agent any
     tools {
