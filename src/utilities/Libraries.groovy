@@ -1,4 +1,5 @@
-package utilities.Library
+package utilities
+
 /* TOMCAT Deployment functions */
 def deployToTomcat(servers,artifact,path) {
   for (server in servers.split(',')) {
