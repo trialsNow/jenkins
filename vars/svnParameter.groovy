@@ -10,7 +10,7 @@ def mavenOpts=[
 def call(String svnURL) {
   
 pipeline {
-    agent { label 'linux'}
+    agent any
     tools {
         maven 'Maven 3.6.2'
         jdk 'jdk8'
